@@ -4,7 +4,7 @@ import ru.vk.education.SearchPage;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 
-public class TestSearch extends TestWithLogin{
+public class TestSearch {
     private static final String KEY_WORD = "котики";
     private static final int GROUPS_COUNT = 10;
     @Test
