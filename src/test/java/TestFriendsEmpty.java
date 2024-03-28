@@ -4,7 +4,7 @@ import ru.vk.education.MainPage;
 
 import static com.codeborne.selenide.Condition.text;
 
-public class TestFriendsEmpty {
+public class TestFriendsEmpty extends TestWithLogin{
     @Test
     public void shouldHaveNoFriends() {
         MainPage.NavigationBar navigationBar = new MainPage.NavigationBar();
