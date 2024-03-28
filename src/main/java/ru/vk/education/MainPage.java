@@ -8,6 +8,13 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage extends BasePage {
 
+    public void pressSearchButton() {
+        searchInput.pressEnter();
+    }
+
+    public void search(String value) {
+        this.setValueToSearchBar(value).pressSearchButton();
+    }
 
     public static class NavigationBar {
         private final SelenideElement profileButton = $(".navigation .__user-main");
