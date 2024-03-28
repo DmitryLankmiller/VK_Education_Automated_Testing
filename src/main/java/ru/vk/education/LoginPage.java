@@ -1,9 +1,11 @@
 package ru.vk.education;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage extends BasePage {
@@ -26,6 +28,13 @@ public class LoginPage extends BasePage {
 
     public void pressLoginButton() {
         this.logInButton.click();
+    }
+
+    public LoginPage shouldHaveLoginEnable() {
+        loginField.shouldBe(enabled);
+        passwordField.shouldBe(enabled);
+        logInButton.shouldBe(enabled);
+        return this;
     }
 
     public void login(String login, String password) {
