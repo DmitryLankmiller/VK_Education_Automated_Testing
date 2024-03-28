@@ -6,7 +6,14 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class MainPage extends BasePage {
+public class MainPage {
+    private final SelenideElement searchInput =
+            $(By.id("toolbar_search")).find(By.tagName("toolbar-search")).find("form div input");
+
+    public MainPage setValueToSearchBar(String value) {
+        searchInput.setValue(value);
+        return this;
+    }
 
     public void pressSearchButton() {
         searchInput.pressEnter();

@@ -1,6 +1,5 @@
 package ru.vk.education;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
@@ -8,7 +7,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Selenide.$;
 
-public class LoginPage extends BasePage {
+public class LoginPage {
     private final SelenideElement loginField = $(By.id("field_email"));
     private final SelenideElement passwordField = $(By.id("field_password"));
     private final SelenideElement logInButton = $(By.cssSelector(".login-form-actions input"));
