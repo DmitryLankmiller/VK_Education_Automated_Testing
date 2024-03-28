@@ -4,7 +4,6 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
@@ -16,10 +15,12 @@ public class LoginPage {
         Selenide.open("/");
         return this;
     }
+
     public LoginPage setLogin(String login) {
         loginField.setValue(login);
         return this;
     }
+
     public LoginPage setPassword(String password) {
         passwordField.setValue(password);
         return this;
@@ -27,13 +28,6 @@ public class LoginPage {
 
     public void pressLoginButton() {
         this.logInButton.click();
-    }
-
-    public LoginPage shouldHaveLoginEnable() {
-        loginField.shouldBe(enabled);
-        passwordField.shouldBe(enabled);
-        logInButton.shouldBe(enabled);
-        return this;
     }
 
     public void login(String login, String password) {
