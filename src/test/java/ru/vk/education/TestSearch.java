@@ -1,6 +1,6 @@
+package ru.vk.education;
+
 import org.junit.jupiter.api.Test;
-import ru.vk.education.MainPage;
-import ru.vk.education.SearchPage;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 

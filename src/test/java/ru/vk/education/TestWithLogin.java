@@ -1,5 +1,6 @@
+package ru.vk.education;
+
 import org.junit.jupiter.api.BeforeAll;
-import ru.vk.education.LoginPage;
 
 public class TestWithLogin extends BaseTest {
     @BeforeAll

@@ -1,6 +1,6 @@
+package ru.vk.education;
+
 import org.junit.jupiter.api.Test;
-import ru.vk.education.LoginPage;
-import ru.vk.education.MainPage;
 
 import static com.codeborne.selenide.Condition.text;
 
