@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class LoginPage {
     private final SelenideElement loginField = $(By.id("field_email"));
     private final SelenideElement passwordField = $(By.id("field_password"));
-    private final SelenideElement logInButton = $(By.cssSelector(".login-form-actions input"));
+    private final SelenideElement logInButton = $(By.xpath(".//div[@class='login-form-actions']/input"));
 
     public LoginPage open() {
         Selenide.open("/");

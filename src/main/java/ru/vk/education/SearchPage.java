@@ -8,7 +8,8 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class SearchPage {
     private final SelenideElement tabPanelGroups = $(By.id("tabpanel-groups"));
-    private final ElementsCollection results = tabPanelGroups.find(By.tagName("div")).findAll(By.tagName("div"));
+    private final ElementsCollection results =
+            tabPanelGroups.findAll(By.xpath(".//*[contains(@class, 'row')]"));
 
     public ElementsCollection results() {
         return results;

@@ -8,10 +8,11 @@ import org.junit.jupiter.api.BeforeAll;
 public class BaseTest {
     protected static final String USER_LOGIN = "technopol65";
     protected static final String USER_PASSWORD = "technopolisPassword";
+    protected static final String BASE_URL = "https://ok.ru/";
 
     @BeforeAll
     public static void startUp() {
-        Configuration.baseUrl = "https://ok.ru/";
+        Configuration.baseUrl = BASE_URL;
         Configuration.browser = "firefox";
     }
 
