@@ -14,6 +14,7 @@ public class BaseTest {
     public static void startUp() {
         Configuration.baseUrl = BASE_URL;
         Configuration.browser = "firefox";
+        Selenide.open("/");
     }
 
     @AfterAll
