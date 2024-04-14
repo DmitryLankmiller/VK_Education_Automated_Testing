@@ -2,15 +2,19 @@ package ru.vk.education;
 
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
+import java.util.regex.Pattern;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestLogin extends BaseTest {
+    private static final Pattern PROFILE_NAME_PATTERN = Pattern.compile(USER_LOGIN);
 
     @Test
     public void shouldLogIn() {
         LoginPage loginPage = new LoginPage();
         loginPage.setLogin(USER_LOGIN).setPassword(USER_PASSWORD).pressLoginButton();
         MainPage.NavigationBar navigationBar = new MainPage.NavigationBar();
-        navigationBar.profileButton().shouldHave(text(USER_LOGIN));
+        String userInfo = navigationBar.profileButton().getText();
+        assertTrue(PROFILE_NAME_PATTERN.matcher(userInfo).find(), "Имя в профиле не соответствует логину");
     }
 }

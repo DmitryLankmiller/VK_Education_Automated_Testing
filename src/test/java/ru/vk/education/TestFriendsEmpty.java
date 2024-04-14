@@ -2,15 +2,21 @@ package ru.vk.education;
 
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
+import java.util.regex.Pattern;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestFriendsEmpty extends TestWithLogin {
-    private static final String EMPTY_FRIENDS = "Пока нет друзей";
+    private static final Pattern EMPTY_FRIENDS = Pattern.compile("Пока нет([  ])друзей");
+
     @Test
     public void shouldHaveNoFriends() {
         MainPage.NavigationBar navigationBar = new MainPage.NavigationBar();
         navigationBar.openFriends();
         FriendsPage friendsPage = new FriendsPage();
-        friendsPage.getFriendCards().shouldHave(text(EMPTY_FRIENDS));
+        String friendsInfo = friendsPage.getFriendCards().getText();
+        assertNotNull(friendsInfo, "Нет текста про отсутствие друзей");
+        assertTrue(EMPTY_FRIENDS.matcher(friendsInfo).find(), "Текст отсутствия друзей не соответствует ожидаемому");
     }
 }
