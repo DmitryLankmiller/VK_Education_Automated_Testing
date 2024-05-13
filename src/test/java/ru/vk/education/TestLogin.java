@@ -13,7 +13,7 @@ public class TestLogin extends BaseTest {
     public void shouldLogIn() {
         LoginPage loginPage = new LoginPage();
         loginPage.setLogin(USER_LOGIN).setPassword(USER_PASSWORD).pressLoginButton();
-        MainPage.NavigationBar navigationBar = new MainPage.NavigationBar();
+        MainPage.NavigationBar navigationBar = new MainPage().navigationBar();
         String userInfo = navigationBar.profileButton().getText();
         assertTrue(PROFILE_NAME_PATTERN.matcher(userInfo).find(), "Имя в профиле не соответствует логину");
     }

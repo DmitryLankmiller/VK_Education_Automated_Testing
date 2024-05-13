@@ -12,7 +12,7 @@ public class TestFriendsEmpty extends TestWithLogin {
 
     @Test
     public void shouldHaveNoFriends() {
-        MainPage.NavigationBar navigationBar = new MainPage.NavigationBar();
+        MainPage.NavigationBar navigationBar = new MainPage().navigationBar();
         navigationBar.openFriends();
         FriendsPage friendsPage = new FriendsPage();
         String friendsInfo = friendsPage.getFriendCards().getText();

@@ -9,11 +9,12 @@ public class JUnitTest {
     @Test
     public void simpleTest() {
         final int correctAnswer = 4;
-        int answer = 2+2;
+        int answer = 2 + 2;
         assertEquals(correctAnswer, answer);
     }
+
     @Test
-    public  void theSimplestTest() {
+    public void theSimplestTest() {
         assertTrue(true);
     }
 }
