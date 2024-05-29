@@ -1,5 +1,6 @@
 package ru.vk.education;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.regex.Pattern;
@@ -11,6 +12,7 @@ public class TestFriendsEmpty extends TestWithLogin {
     private static final Pattern EMPTY_FRIENDS = Pattern.compile("Пока нет([  ])друзей");
 
     @Test
+    @Disabled("Now I have friends!")
     public void shouldHaveNoFriends() {
         MainPage.NavigationBar navigationBar = new MainPage().navigationBar();
         navigationBar.openFriends();
