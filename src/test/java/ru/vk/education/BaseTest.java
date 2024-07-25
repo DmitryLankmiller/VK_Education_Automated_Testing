@@ -14,7 +14,14 @@ public class BaseTest {
     public static void startUp() {
         Configuration.baseUrl = BASE_URL;
         Configuration.browser = "firefox";
+        Configuration.timeout = 15_000;
         Selenide.open("/");
+    }
+
+    @BeforeAll
+    public static void acceptPrivacy() {
+        if (BasePage.isAcceptPrivacyButtonDisplayed())
+            BasePage.clickAcceptPrivacyButton();
     }
 
     @AfterAll
